@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>طارق الرفاعي | السيرة الذاتية + متجر القهوة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f4f9fc;
+            font-family: 'Cairo', sans-serif;
+            color: #1e2a3e;
+            line-height: 1.5;
+            padding: 2rem 1.5rem;
+        }
+
+        .cv-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            padding: 2rem 2rem 1.8rem;
+        }
+
+        /* الهيدر الشخصي */
+        .profile-header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid #e2edf2;
+            padding-bottom: 2rem;
+        }
+
+        .profile-pic {
+            flex-shrink: 0;
+        }
+        .profile-pic img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border: 4px solid #ffffff;
+            background-color: #dbedf2;
+        }
+
+        .contact-info {
+            flex: 1;
+            background: #f9fdfe;
+            padding: 1.2rem 1.8rem;
+            border-radius: 28px;
+            border: 1px solid #e9f0f3;
+        }
+        .contact-info h2 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #1c4e6e;
+            margin-bottom: 0.5rem;
+        }
+        .contact-info .tagline {
+            font-size: 0.9rem;
+            color: #5b7a95;
+            margin-bottom: 1rem;
+            border-right: 3px solid #9bc2d4;
+            padding-right: 0.75rem;
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+            color: #2c4b66;
+            flex-wrap: wrap;
+        }
+        .info-item i {
+            width: 28px;
+            color: #5293b0;
+        }
+
+        /* الأقسام */
+        .section {
+            margin-bottom: 2rem;
+        }
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #225b7a;
+            margin-bottom: 1.2rem;
+            border-right: 5px solid #aacbd9;
+            padding-right: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .education-card {
+            background: #fafeff;
+            border-radius: 24px;
+            padding: 1.3rem 1.8rem;
+            border: 1px solid #e2f0f5;
+        }
+        .edu-item {
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px dashed #d4e6ed;
+        }
+        .extra-note {
+            background: #eef5f8;
+            padding: 0.8rem 1.2rem;
+            border-radius: 20px;
+            margin-top: 0.8rem;
+            font-size: 0.95rem;
+            color: #1e5a74;
+        }
+
+        /* مربع المتجر (حل محل iframe السابق) */
+        .shop-box {
+            background: #ffffff;
+            border: 1px solid #d9e8ef;
+            border-radius: 28px;
+            padding: 1.2rem;
+            margin: 1rem 0 1.5rem;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.03);
+        }
+        .shop-box h3 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #226680;
+            margin-bottom: 1rem;
+            padding-right: 0.5rem;
+        }
+
+        /* أنماط المتجر المضمن */
+        .coffee-shop {
+            background: #fef7ef;
+            border-radius: 24px;
+            padding: 1rem;
+        }
+        .coffee-header {
+            background: white;
+            border-radius: 40px;
+            padding: 12px 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.03);
+        }
+        .coffee-header .logo h2 {
+            color: #6b3f1c;
+            font-size: 1.6rem;
+        }
+        .cart-btn-shop {
+            background: #e7d8ca;
+            padding: 8px 20px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            border: none;
+            font-size: 1rem;
+        }
+        .products-grid-shop {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        .product-card-shop {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 18px;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.05);
+            transition: 0.2s;
+        }
+        .product-img-shop {
+            font-size: 70px;
+            background: #f2e6da;
+            padding: 18px;
+        }
+        .product-title-shop {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 12px 0 5px;
+        }
+        .product-desc-shop {
+            color: #7f6242;
+            font-size: 0.8rem;
+            padding: 0 12px;
+        }
+        .product-price-shop {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #c47a2e;
+            margin: 10px 0;
+        }
+        .add-to-cart-shop {
+            background: #6f4e2e;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .cart-overlay-shop {
+            position: fixed;
+            top:0; left:0; width:100%; height:100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            display: none;
+        }
+        .cart-sidebar-shop {
+            position: fixed;
+            top:0; left:-380px;
+            width: 360px;
+            height:100%;
+            background: white;
+            z-index: 1001;
+            padding: 20px;
+            transition: 0.3s;
+            overflow-y: auto;
+            direction: rtl;
+            box-shadow: -2px 0 20px rgba(0,0,0,0.1);
+        }
+        .cart-sidebar-shop.open {
+            left: 0;
+        }
+        .cart-header-shop {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid #e2cfbb;
+            padding-bottom: 12px;
+            margin-bottom: 15px;
+        }
+        .cart-item-shop {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+        .cart-total-shop {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 18px 0;
+        }
+        .checkout-btn-shop, .submit-order-shop {
+            width: 100%;
+            padding: 10px;
+            border-radius: 40px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            margin: 8px 0;
+            font-size: 1rem;
+        }
+        .checkout-btn-shop { background: #c49a6c; color: #2c2c2c; }
+        .submit-order-shop { background: #2c5e2e; color: white; }
+        .order-form-shop input, .order-form-shop textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 30px;
+            border: 1px solid #ddd;
+            font-family: 'Cairo', sans-serif;
+        }
+        .shop-footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 12px;
+            border-top: 1px solid #e2cfbb;
+            font-size: 0.8rem;
+            color: #9b846c;
+        }
+        @media (max-width: 680px) {
+            .cart-sidebar-shop { width: 100%; left: -100%; }
+            .cv-container { padding: 1.2rem; }
+        }
+
+        /* المهارات */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .skill-cat {
+            background: #f9fefc;
+            border-radius: 20px;
+            padding: 1rem 1.3rem;
+            border: 1px solid #e2edf0;
+        }
+        .skill-badge {
+            background: white;
+            border: 1px solid #bed7e2;
+            padding: 0.3rem 0.9rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin: 4px 4px 0 0;
+        }
+        .thankyou-message {
+            text-align: center;
+            background: #eef5f9;
+            padding: 1rem;
+            border-radius: 60px;
+            margin: 1.5rem 0 1rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #1f5b78;
+        }
+        .footer-id {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #daeef5;
+            font-size: 0.9rem;
+            color: #588aa3;
+        }
+        @media (max-width: 720px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .contact-info { text-align: center; }
+            .info-item { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+<div class="cv-container">
+    <!-- معلومات شخصية -->
+    <div class="profile-header">
+        <div class="profile-pic">
+            <img src="https://ui-avatars.com/api/?background=98c1d9&color=fff&rounded=true&size=160&fontsize=0.65&name=Tariq+R" alt="طارق الرفاعي">
+        </div>
+        <div class="contact-info">
+            <h2>طارق الرفاعي</h2>
+            <div class="tagline">مطور برمجيات | شغوف ببناء المتاجر الإلكترونية وتجارب المستخدم</div>
+            <div class="info-item"><i class="fas fa-user-circle"></i><span>العمر: 23 سنة</span></div>
+            <div class="info-item"><i class="fas fa-home"></i><span>السكن: السيدة زينب - الذيابية</span></div>
+            <div class="info-item"><i class="fas fa-phone-alt"></i><span>0991809845</span></div>
+        </div>
+    </div>
+
+    <!-- التحصيل العلمي -->
+    <div class="section">
+        <div class="section-title"><i class="fas fa-graduation-cap"></i><span>تحصيلي العلمي والإضافات</span></div>
+        <div class="education-card">
+            <div class="edu-item"><strong>📘 الثانوية العامة (فرع الأدبي)</strong> – بتقدير جيد جداً.</div>
+            <div class="edu-item"><strong>🎓 دبلوم هندسة البرمجيات</strong><br>الجامعة الأردنية الهاشمية – مدة الدبلوم: سنة (برنامج مكثف في تطوير التطبيقات).</div>
+            <div class="extra-note"><i class="fas fa-plus-circle"></i> إضافات: دورة متقدمة في JavaScript، ورشة عمل في React.js، شهادة في أساسيات التجارة الإلكترونية.</div>
+        </div>
+    </div>
+
+    <!-- ========== الموقع الإلكتروني (متجر القهوة المدمج) ========== -->
+    <div class="shop-box">
+        <h3><i class="fas fa-store"></i> 🛍️ متجر "طريق القهوة" – موقع إلكتروني متكامل</h3>
+        <div class="coffee-shop" id="coffeeShopRoot">
+            <!-- متجر القهوة سيتم إنشاؤه بواسطة JS مباشرة لتجنب أي أخطاء في srcdoc -->
+        </div>
+        <div class="helper-text" style="margin-top: 12px; font-size:0.8rem; color:#6688a0;">
+            <i class="fas fa-mug-hot"></i> متجر تفاعلي كامل: أضف المنتجات إلى السلة، ثم أرسل الطلب عبر واتساب (الرقم الخاص بي: 0991809845).
+        </div>
+    </div>
+
+    <!-- الخبرات واللغات -->
+    <div class="section">
+        <div class="section-title"><i class="fas fa-laptop-code"></i><span>خبراتي البرمجية واللغوية</span></div>
+        <div class="skills-grid">
+            <div class="skill-cat">
+                <h4><i class="fab fa-python"></i> لغات البرمجة والتقنيات</h4>
+                <div>
+                    <span class="skill-badge">HTML5 & CSS3</span>
+                    <span class="skill-badge">JavaScript (ES6+)</span>
+                    <span class="skill-badge">React.js (مبتدئ)</span>
+                    <span class="skill-badge">Python / أساسيات</span>
+                    <span class="skill-badge">Git & GitHub</span>
+                </div>
+                <div style="margin-top:8px; font-size:0.85rem;">✔ بناء متاجر إلكترونية ديناميكية، إدارة الحالة، دمج واجهات برمجية.</div>
+            </div>
+            <div class="skill-cat">
+                <h4><i class="fas fa-language"></i> المهارات اللغوية</h4>
+                <div class="lang-level">🇸🇦 اللغة العربية: لغة أم (قراءة وكتابة ممتازة)</div>
+                <div class="lang-level">🇬🇧 اللغة الإنجليزية: مستوى متوسط (قراءة تقنية، فهم الوثائق، كتابة تقارير)</div>
+                <div class="skill-badge">محادثة تقنية</div>
+                <div class="skill-badge">ترجمة نصوص</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- رسالة الشكر والوظيفة -->
+    <div class="thankyou-message">
+        <i class="fas fa-heart" style="color:#92bfd6;"></i> أتمنى الحصول على الوظيفة وشكراً لكم على وقتكم وتقديري <i class="fas fa-smile-wink"></i>
+    </div>
+    <div class="footer-id">
+        <i class="fab fa-twitter"></i> <i class="fas fa-at"></i> معرف الصفحة: 
+        <span style="font-weight:600;">@Tariq_AlRefai_CV</span> | <i class="fas fa-code"></i> سيرة ذاتية متكاملة مع متجر قهوة حقيقي
+    </div>
+</div>
+
+<script>
+    // إنشاء متجر القهوة بالكامل داخل الـ div المخصص (coffeeShopRoot) بدون iframe
+    const shopContainer = document.getElementById('coffeeShopRoot');
+    
+    function buildCoffeeShop() {
+        if (!shopContainer) return;
+        // منتجات المتجر
+        const products = [
+            { id: 1, name: "قهوة عربية أصيلة", desc: "بن يمني مع الهيل والزعفران – 250 غ", price: 35000, icon: "🫘" },
+            { id: 2, name: "قهوة تركية فاخرة", desc: "طحنة ناعمة – 500 غ", price: 68000, icon: "🌿" },
+            { id: 3, name: "موكا إسبريسو", desc: "حبوب إثيوبية وكولومبية – 250 غ", price: 45000, icon: "🍫" },
+            { id: 4, name: "قهوة باردة (كولد برو)", desc: "جاهزة للشرب – 330 مل", price: 29000, icon: "🧊" },
+            { id: 5, name: "هيل طبيعي", desc: "هيل ممتاز – 100 غ", price: 15000, icon: "🌱" },
+            { id: 6, name: "ماكينة قهوة تركية", desc: "نحاس أصلي – 3 أكواب", price: 125000, icon: "🏺" }
+        ];
+
+        let cart = [];
+
+        // تحميل وحفظ السلة
+        function loadCart() {
+            const saved = localStorage.getItem("coffee_cart_main");
+            if (saved) cart = JSON.parse(saved);
+            else cart = [];
+            updateCartUI();
+        }
+        function saveCart() {
+            localStorage.setItem("coffee_cart_main", JSON.stringify(cart));
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const countSpan = document.getElementById('cartCountShop');
+            const cartItemsDiv = document.getElementById('cartItemsListShop');
+            const cartTotalSpan = document.getElementById('cartTotalShop');
+            if (countSpan) countSpan.innerText = cart.reduce((s, i) => s + i.quantity, 0);
+            if (cartItemsDiv) {
+                if (cart.length === 0) {
+                    cartItemsDiv.innerHTML = "<p>السلة فارغة</p>";
+                    if (cartTotalSpan) cartTotalSpan.innerHTML = "المجموع: 0 ل.س";
+                    return;
+                }
+                let html = '';
+                let total = 0;
+                cart.forEach((item, idx) => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+                    html += `
+                        <div class="cart-item-shop">
+                            <div><strong>${item.name}</strong><br>${item.quantity} × ${item.price.toLocaleString()} ل.س</div>
+                            <div>${itemTotal.toLocaleString()} ل.س <button onclick="window.removeFromCartShop(${idx})" style="background:none; border:none; color:red; font-size:1.2rem; cursor:pointer;">🗑</button></div>
+                        </div>
+                    `;
+                });
+                cartItemsDiv.innerHTML = html;
+                if (cartTotalSpan) cartTotalSpan.innerHTML = `المجموع: ${total.toLocaleString()} ل.س`;
+            }
+        }
+
+        window.addToCartShop = function(product) {
+            const existing = cart.find(item => item.id === product.id);
+            if (existing) existing.quantity++;
+            else cart.push({ ...product, quantity: 1 });
+            saveCart();
+            alert("✅ تمت إضافة المنتج إلى السلة");
+        };
+
+        window.removeFromCartShop = function(index) {
+            cart.splice(index, 1);
+            saveCart();
+            const orderDiv = document.getElementById('orderFormDivShop');
+            if (orderDiv && cart.length === 0) orderDiv.style.display = "none";
+        };
+
+        function clearCart() {
+            cart = [];
+            saveCart();
+            const orderDiv = document.getElementById('orderFormDivShop');
+            if (orderDiv) orderDiv.style.display = "none";
+        }
+
+        // إنشاء واجهة المتجر
+        const shopHTML = `
+            <div class="coffee-header">
+                <div class="logo"><h2>☕ طريق القهوة</h2></div>
+                <button class="cart-btn-shop" id="openCartBtnShop">🛒 السلة (<span id="cartCountShop">0</span>)</button>
+            </div>
+            <div class="products-grid-shop" id="productsGridShop"></div>
+            <div class="shop-footer">
+                <p>📍 توصيل إلى السيدة زينب والذيبانية وريف دمشق | الدفع عند الاستلام</p>
+                <p>📞 للاستفسار: <strong>0991809845</strong> (واتساب)</p>
+            </div>
+            <div class="cart-overlay-shop" id="cartOverlayShop"></div>
+            <div class="cart-sidebar-shop" id="cartSidebarShop">
+                <div class="cart-header-shop"><h3>سلة المشتريات</h3><button id="closeCartBtnShop" style="background:none; border:none; font-size:1.8rem; cursor:pointer;">✖</button></div>
+                <div id="cartItemsListShop"></div>
+                <div class="cart-total-shop" id="cartTotalShop">المجموع: 0 ل.س</div>
+                <button class="checkout-btn-shop" id="showOrderFormBtnShop">إتمام الطلب</button>
+                <div id="orderFormDivShop" style="display:none;">
+                    <div class="order-form-shop">
+                        <h4 style="margin:10px 0">بيانات التوصيل</h4>
+                        <input type="text" id="customerNameShop" placeholder="الاسم الكامل" required>
+                        <input type="tel" id="customerPhoneShop" placeholder="رقم الهاتف" required>
+                        <textarea id="customerAddressShop" rows="3" placeholder="العنوان بالتفصيل (الشارع، البناية، الطابق)" required></textarea>
+                        <button class="submit-order-shop" id="sendWhatsAppBtnShop">إرسال الطلب عبر واتساب</button>
+                        <p style="font-size:12px; margin-top:8px;">سيتم فتح واتساب مع الطلب، ما عليك سوى الإرسال.</p>
+                    </div>
+                </div>
+            </div>
+        `;
+        shopContainer.innerHTML = shopHTML;
+
+        // عرض المنتجات
+        const productsGrid = document.getElementById('productsGridShop');
+        if (productsGrid) {
+            productsGrid.innerHTML = products.map(p => `
+                <div class="product-card-shop">
+                    <div class="product-img-shop">${p.icon}</div>
+                    <div class="product-title-shop">${p.name}</div>
+                    <div class="product-desc-shop">${p.desc}</div>
+                    <div class="product-price-shop">${p.price.toLocaleString()} ل.س</div>
+                    <button class="add-to-cart-shop" onclick="addToCartShop({id:${p.id}, name:'${p.name.replace(/'/g, "\\'")}', price:${p.price}, icon:'${p.icon}'})">أضف إلى السلة</button>
+                </div>
+            `).join('');
+        }
+
+        // ربط الأحداث
+        const sidebar = document.getElementById('cartSidebarShop');
+        const overlay = document.getElementById('cartOverlayShop');
+        const openBtn = document.getElementById('openCartBtnShop');
+        const closeBtn = document.getElementById('closeCartBtnShop');
+        const showOrderBtn = document.getElementById('showOrderFormBtnShop');
+        const sendWhatsApp = document.getElementById('sendWhatsAppBtnShop');
+
+        function openCart() {
+            if (sidebar) sidebar.classList.add('open');
+            if (overlay) overlay.style.display = 'block';
+            updateCartUI();
+            const orderDiv = document.getElementById('orderFormDivShop');
+            if (orderDiv) {
+                if (cart.length === 0) orderDiv.style.display = 'none';
+                else orderDiv.style.display = 'block';
+            }
+        }
+        function closeCart() {
+            if (sidebar) sidebar.classList.remove('open');
+            if (overlay) overlay.style.display = 'none';
+        }
+        if (openBtn) openBtn.onclick = openCart;
+        if (closeBtn) closeBtn.onclick = closeCart;
+        if (overlay) overlay.onclick = closeCart;
+
+        if (showOrderBtn) {
+            showOrderBtn.onclick = () => {
+                if (cart.length === 0) {
+                    alert("السلة فارغة، أضف منتجات أولاً.");
+                    return;
+                }
+                const orderDiv = document.getElementById('orderFormDivShop');
+                if (orderDiv) orderDiv.style.display = 'block';
+            };
+        }
+
+        if (sendWhatsApp) {
+            sendWhatsApp.onclick = () => {
+                const name = document.getElementById('customerNameShop').value.trim();
+                const phone = document.getElementById('customerPhoneShop').value.trim();
+                const address = document.getElementById('customerAddressShop').value.trim();
+                if (!name || !phone || !address) {
+                    alert("الرجاء إدخال جميع بيانات التوصيل");
+                    return;
+                }
+                if (cart.length === 0) {
+                    alert("السلة فارغة");
+                    return;
+                }
+                let itemsList = "";
+                let total = 0;
+                cart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+                    itemsList += `• ${item.name} × ${item.quantity} = ${itemTotal.toLocaleString()} ل.س\n`;
+                });
+                const message = `🛍️ *طلب جديد من متجر طريق القهوة* 🛍️\n\n👤 *الاسم:* ${name}\n📞 *الهاتف:* ${phone}\n📍 *العنوان:* ${address}\n\n🛒 *المنتجات:*\n${itemsList}\n💰 *المجموع الكلي:* ${total.toLocaleString()} ل.س\n💵 *طريقة الدفع:* عند الاستلام\n\n⏱️ التاريخ: ${new Date().toLocaleString("ar-EG")}`;
+                const whatsappNumber = "963991809845"; // الرقم الدولي الخاص بـ 0991809845
+                const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+                window.open(url, "_blank");
+                // تنظيف السلة وإغلاق النافذة
+                cart = [];
+                saveCart();
+                closeCart();
+                document.getElementById('customerNameShop').value = "";
+                document.getElementById('customerPhoneShop').value = "";
+                document.getElementById('customerAddressShop').value = "";
+                alert("تم فتح واتساب، يرجى الضغط على إرسال لإتمام الطلب.");
+            };
+        }
+
+        loadCart();
+    }
+
+    // تنفيذ البناء عند تحميل الصفحة
+    buildCoffeeShop();
+</script>
+</body>
+</html>
